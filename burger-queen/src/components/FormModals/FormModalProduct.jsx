@@ -16,6 +16,15 @@ export const ModalAddProduct = (props = false,) => {
     const [priceProduct, setPriceProduct] = useState(element.price ||'')
     const [filePreview, setFilePreview] = useState(element.image || null)
 
+    // const [product, setProduct] = useState({
+    //     id: element.id || '',
+    //     name: element.name || '',
+    //     type: element.type ||'',
+    //     image: '',
+    //     filePreview: element.image || null,
+    //     price: element.price ||'',
+    // })
+
 
     const handleSubmit = async (e) => {
         e.preventDefault();
