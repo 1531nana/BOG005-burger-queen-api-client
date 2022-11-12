@@ -8,21 +8,22 @@ const TableProvider = ({children}) => {
 
     const [products, setProducts] = useState([])
     const avaliablesKeys = ['image', 'name', 'price', 'id', 'type']
-
-    useEffect(() => {
-        getListProducts();
-    }, [])
     
     async function getListProducts() {
         const dataProducts = await getProducts('products')
         setProducts(dataProducts);
     }
 
-    const onClose = getListProducts
-    const data = {products, avaliablesKeys, onClose}
-    // console.log('setProducts ', products);
+    useEffect(() => {
+        getListProducts();
+    }, [])
 
-    return <TableContext.Provider value={data}>{children}</TableContext.Provider>
+    const onClose = getListProducts
+
+        const data = {products, avaliablesKeys, onClose}
+    
+        return <TableContext.Provider value={data}>{children}</TableContext.Provider>
+    
 }
 
 export {TableProvider}

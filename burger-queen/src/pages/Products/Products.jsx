@@ -42,6 +42,7 @@ export const Products = () => {
                             <img src={plus} alt="" className="products_button--plus" />
                             <span className="products_button--text"> Agregar Producto </span>
                         </div>}
+<<<<<<< HEAD
                         content={<ModalAddProduct />}
                     // content={<ModalAddProduct onClose = {getListProducts}/>}
                     />
@@ -53,6 +54,13 @@ export const Products = () => {
                         <Table listElements={products} listFilterKeys={avaliablesKeys} />
 
                     </TableContext.Provider>
+=======
+                        content={<ModalAddProduct element={{}}/>}
+                        // content={<ModalAddProduct onClose = {getListProducts}/>}
+                    />
+                    <Table  />
+                    {/* <Table listElements={products} listFilterKeys={avaliablesKeys} /> */}
+>>>>>>> 07b5f794457d8a520f1bd6880f62ae8e0a3ee80c
                 </div>
             </div>
         </div>
