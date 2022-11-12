@@ -4,12 +4,20 @@ import Exit from '../../assets/images/exit.png'
 import Products from '../../assets/images/products.png'
 import Users from '../../assets/images/users.png'
 import Orders from '../../assets/images/orders.png'
+import { logOut } from "../../lib/helpers"
+
+export const ExitIcon = () => {
+    return(
+        <img src={Exit} alt="" className="sideMenu_exitMenu" />
+    )
+}
 
 export const SideMenu = () => {
+
     return (
         <div className="sideMenu">
 
-            <img src={Exit} alt="" className="sideMenu_exitMenu" />
+            {/* <img src={Exit} alt="" className="sideMenu_exitMenu" /> */}
 
             <div className="sideMenu_userBox">
                 <img src={User} alt="user" className="sideMenu_userBox--img" />
@@ -35,7 +43,7 @@ export const SideMenu = () => {
 
             </div>
 
-            <span className="sideMenu_exit">Cerrar Sesion</span>
+            <span className="sideMenu_exit" onClick={logOut}>Cerrar Sesión</span>
 
         </div>
     )

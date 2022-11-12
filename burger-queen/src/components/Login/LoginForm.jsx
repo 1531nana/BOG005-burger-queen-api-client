@@ -24,6 +24,7 @@ export const LoginForm = () => {
       if(dataLogin !== null){
         const token = dataLogin.accessToken
         window.localStorage.setItem("loginToken", token);
+        window.localStorage.setItem("User", data.email);
         navigate('/products')
       }
       else{

@@ -1,15 +1,16 @@
+import { useContext } from "react"
+import { TableContext } from "../../context/TableContext"
+// import TableContext from "../../context/TableContext"
+// import { filterAtributteList } from "../../lib/helpers"
 import { TableComlumnOption } from "./TableColumnOption"
-
 
 export const TableBody = (props) => {
 
-    const { listElements, onClose } = props
-    console.log('lista de elementos', listElements)
+    const {products} = useContext(TableContext)
 
    // const tr = return listElements.includes(regexUrl) ? listTrImg : listTr 
 //    listElements.length === 0 ?
-    const listTr = listElements.map((element) => {
-        
+    const listTr = products.map((element) => {
 
         return (
             <tr className='table_rowBody'>
@@ -18,7 +19,7 @@ export const TableBody = (props) => {
                     <td className='table_columnBody'>{element.name}</td>
                     <td className='table_columnBody table_columnBody--price'>{element.price}</td>
                 </div>
-                <TableComlumnOption onClose= {onClose} element={element}/>
+                <TableComlumnOption  element={element}/>
             </tr>
         )
     }) 

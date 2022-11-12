@@ -50,9 +50,14 @@ async function uploadImgWeb (img) {
 
 }
 
+const logOut = () => {
+  localStorage.clear();
+  window.location.pathname = '/'
+}
 
 export {
   filterAtributteList,
   uploadImgWeb, 
-  onChangeImg
+  onChangeImg,
+  logOut
 }
