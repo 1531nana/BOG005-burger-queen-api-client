@@ -55,9 +55,21 @@ const logOut = () => {
   window.location.pathname = '/'
 }
 
+
+const renamePropertiesKeys = (element) => {
+
+    let newListOfKeys = Object.keys(element);
+    const renameKeys = newListOfKeys.map((column) => {
+      return { name: column };
+    });
+    
+  return renameKeys
+}
+
 export {
   filterAtributteList,
   uploadImgWeb, 
   onChangeImg,
-  logOut
+  logOut, 
+  renamePropertiesKeys
 }
