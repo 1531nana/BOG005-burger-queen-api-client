@@ -9,7 +9,7 @@ import { useModal } from "../Modals/useModal";
 
 const ProductContext = createContext();
 
-function BloqueProductPrice(element) {
+function BlockProductPrice(element) {
 
     return (
         <div className="table_columnBody--section">
@@ -34,7 +34,7 @@ const ProductsProvider = ({ children }) => {
             componente: (element) => { return <td className='table_columnBody table_columnBody--img'><img src={element.image} alt="" /></td> }
         },
         {
-            key: null, componente: BloqueProductPrice
+            key: null, componente: BlockProductPrice
         },
         { key: null, componente: (element) => <TableColumnOption element={element} Add={FormProduct} Delete={DeleteModalProduct} /> }
     ]
@@ -76,7 +76,7 @@ const ProductsProvider = ({ children }) => {
         columnKeys,
     }
 
-    console.log("produtContext >>>> ", data)
+    console.log("productContext >>>> ", data)
 
     return <ProductContext.Provider value={data}>{children}</ProductContext.Provider>
 

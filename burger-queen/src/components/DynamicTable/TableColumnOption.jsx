@@ -3,7 +3,7 @@ import delet from '../../assets/images/delete.png'
 import { Modals } from '../../Modals/Modals'
 import { BtnAbort } from '../Products/DeleteModalProduct/DeleteModalProduct'
 import { useModal } from '../../Modals/useModal'
-
+import { ModalsForm } from '../../Modals/ModalForm/Modals'
 
 export const TableColumnOption = ({ element, Add, Delete }) => {
 
@@ -13,7 +13,7 @@ export const TableColumnOption = ({ element, Add, Delete }) => {
     return (
         <tr className='table_rowBodyOpt'>
             <td className='table_columnBody'>
-                <Modals
+                <ModalsForm
                     isOpen={isOpen}
                     open={open}
                     close={close}

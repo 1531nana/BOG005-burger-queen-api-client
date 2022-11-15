@@ -1,10 +1,10 @@
 import "./style.scss"
 import plus from '../../assets/images/plus.png'
 import { Header } from "../../components/Header/Header";
-import { Modals } from '../../Modals/Modals'
 import { FormProduct} from "../../components/Products/FormProduct/FormProduct";
 import { useProductsContext } from "../../context/ProductsContext";
 import { ProductsTable } from "../../components/Products/ProductTable";
+import { ModalsForm } from "../../Modals/ModalForm/Modals";
 
 export const Products = () => {
 
@@ -19,7 +19,7 @@ export const Products = () => {
 
                 <h1 className="products_role">ADMINISTRADOR</h1>
                 <div className="products_container">
-                    <Modals
+                    <ModalsForm
                         isOpen={isOpenModal}
                         close={closeModal}
                         open={openModal}
@@ -29,11 +29,8 @@ export const Products = () => {
                             <span className="products_button--text"> Agregar Producto </span>
                         </div>}
                         content={<FormProduct element={{}}/>}
-                        // content={<ModalAddProduct onClose = {getListProducts}/>}
                     />
                     <ProductsTable/>
-                    {/* <Table  /> */}
-                    {/* <Table listElements={products} listFilterKeys={avaliablesKeys} /> */}
                 </div>
             </div>
         </div>

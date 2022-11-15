@@ -1,0 +1,43 @@
+@import '../../../generics.scss';
+
+.deleteModal{
+
+    width: 300px;
+    height: 250px;
+    @include flex-column-center;
+    background-color: #ECECEC;
+    border-radius: 10px;
+
+    &_container{
+    @include flex-column-center;
+    gap: 10px;
+    padding: 5px;
+    }
+
+    &_title{
+        font-size: 28px;
+        display: flex;
+        position: absolute;
+        top: 10%;
+    }
+
+    &_warning{
+        justify-content: center;
+        text-align: center;
+    }
+    
+    &_btnDelete{
+        bottom: 10px;
+        left: 15px;
+        background: $tertiary-color;
+        @include btns-abort-delet;
+    }
+    
+    &_btnAbort{
+        bottom: 10px;
+        right: 15px;
+        background: $secundary-color;  
+        @include btns-abort-delet;
+    }
+
+}

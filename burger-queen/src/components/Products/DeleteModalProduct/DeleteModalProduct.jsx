@@ -1,8 +1,9 @@
 import { useProductsContext } from "../../../context/ProductsContext";
+import './style.scss'
+
 
 export const BtnAbort = ({close}) => {
-
-  return <button onClick={close}>CANCELAR</button>;
+  return <button className="deleteModal_btnAbort" onClick={close}>CANCELAR</button>;
 };
 
 export const DeleteModalProduct = ({ element, closeModal }) => {
@@ -14,15 +15,17 @@ export const DeleteModalProduct = ({ element, closeModal }) => {
   }
 
   return (
-    <div>
-      <h1>Eliminación</h1>
-      <p>La información del producto no podrá ser recuperada</p>
-      <p>¿Está seguro de eliminar el producto?</p>
-      <button
-        onClick={handleDelete}
-      >
-        ELIMINAR
-      </button>
-    </div>
+    <main className="deleteModal">
+        <section className="deleteModal_container">
+          <h1 className="deleteModal_title">Eliminación</h1>
+            <p className="deleteModal_warning">La información del producto no podrá ser recuperada</p>
+            <p className="deleteModal_question">¿Está seguro de eliminar el producto?</p>
+          <button className="deleteModal_btnDelete"
+            onClick={handleDelete}
+          >
+            ELIMINAR
+          </button>
+        </section>
+    </main>
   );
 };

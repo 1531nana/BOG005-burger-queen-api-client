@@ -1,14 +1,102 @@
 @import '../../../generics.scss';
 
-.modalProduct{
+.formProduct{
 
-    &_previewImage{
-        width: 100%;
-        display: flex;
+    &_form{
+        min-width: 290px;
+        max-width: 340px;
+        @include flex-column-center;
+        gap: 40px;
+        padding: 1em;
+    }
 
-        &--img {
-            background: wheat;
-            width: 20%;
+    &_title{
+        width: 80%;
+        min-width: 290px;
+        max-width: 315px;
+        background: $secundary-color;
+        border-radius: 10px;
+        padding: 15px 15px;
+        @include flex-row-center;
+        gap: 10px;
+        margin-top: 15px;
+
+        &--text{
+            font-size: 18px;
+            font-weight: bold;
         }
     }
+
+    &_options{
+
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+
+        &--input{
+            width: 100%;
+            max-width: 320px;
+            padding: 10px 15px;
+            margin-bottom: 15px;
+            border: 1px solid gray;
+            border-radius: 10px;
+            text-align: start;
+            outline: none;
+
+        }
+
+        select{
+            font-size: 15px;
+        }
+        
+        &--image{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+
+            &--previewImage{
+
+                width: 315px;
+                height: 60px;
+                display: flex;
+
+                &--img {
+                    background: rgb(236, 231, 231);
+                    width: 20%;
+                    height: 80%;
+                    object-fit: contain;
+                }
+            }
+        }
+    }
+
+    &_btn{
+        width: 60%;
+        height: 36px;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 10px;
+        text-align: center;
+        background: $secundary-color;
+        margin: 0 0 30px 0;
+        outline: none;
+        cursor: pointer;
+        font-weight: bold;
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 1024px){
+
+  .formProduct{
+
+    &_form{
+        gap: 0;
+    }
+
+    &_title{
+        margin-top: 0;
+    }
+
+  }
 }

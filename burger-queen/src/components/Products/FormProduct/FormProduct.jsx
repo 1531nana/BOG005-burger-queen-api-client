@@ -27,17 +27,12 @@ export const FormProduct = ({ element, closeModal }) => {
         //Create
         if (element.id === undefined) {
 
-            // window.location.pathname = '/products'
-            // await makeRequestPost('products', data, true)
             await createProduct(data)
             
         } else {
             
-            // await makeRequestPatch('products', element.id, data)
             await updateProduct(element.id, data)
             closeModal()
-
-            // window.location.pathname = '/products'
         }
     }
 
@@ -54,39 +49,42 @@ export const FormProduct = ({ element, closeModal }) => {
 
 
     return (
-        <div className="modalAddProduct">
+        <div className="formProduct">
             <form onSubmit={
-                handleSubmit} className="modalAddProduct_form">
-                <div>
-                    <p>Nuevo producto</p>
+                handleSubmit} className="formProduct_form">
+                <div className="formProduct_title">
+                    <p className="formProduct_title--text">Nuevo producto</p>
                 </div>
 
+                <div className="formProduct_options">
                 <label htmlFor="name_product">Nombre del producto</label>
                 <input onChange={(event) => handleInputsChange(setNameProduct, event)} type="text" name="name_product"
-                    className="modalAddProduct_input" value={nameProduct} required />
+                    className="formProduct_options--input" value={nameProduct} required />
 
                 <label htmlFor="select_product">Tipo de menú:</label>
                 <select onChange={(event) => handleInputsChange(setTypeProduct, event)} name="select_product"
-                    className="modalAddProduct_input" value={typeProduct} required>
+                    className="formProduct_options--input" value={typeProduct} required>
                     <option selected='selected' >Seleccionar</option>
                     <option >Desayuno</option>
                     <option >Almuerzo</option>
                 </select>
 
-                <div className="modalProduct_previewImage">
-                    <label htmlFor="name_product">Imagen del producto</label>
+                <div className="formProduct_options--image">
+                    <label htmlFor="image_product">Imagen del producto</label>
+                   <div className="formProduct_options--image--previewImage">
                     <input
                         onChange={(e) => {
                             handleChangeImage(e)
-                        }} type="file" name="image_product" className="modalAddProduct_input" />
-                    <img src={filePreview} alt="" className="modalProduct_previewImage--img" />
+                        }} type="file" name="image_product" className="formProduct_options--input" />
+                    <img src={filePreview} alt="" className="formProduct_options--image--previewImage--img" />
+                   </div>
                 </div>
 
                 <label htmlFor="name_product">Precio del producto</label>
                 <input onChange={(e) => handleInputsChange(setPriceProduct, e)} type="number" name="price_product"
-                    className="modalAddProduct_input" value={priceProduct} required />
-
-                <button className="loginPage_btn" >Guardar</button>
+                    className="formProduct_options--input" value={priceProduct} required />
+                </div>
+                <button className="formProduct_btn" >Guardar</button>
             </form>
         </div>
     )

@@ -4,7 +4,6 @@
     min-height: 100vh;
     @include flex-column-center;
     justify-content: space-between;
-    // align-content: space-between;
     padding: 50px 0;
     max-width: 400px;
     gap: 40px;
@@ -16,12 +15,6 @@
     top: 0;
     transition: width 0.5s , opacity 0.3s;
     opacity: 1;
-    
-    // &_hidden{
-    //     width: 0;
-    //     opacity: 0;
-    //     transition: width 0.5s , opacity 0.2s 0.1S;
-    // }
 
     &_exitMenu{
         width: 20px;
@@ -29,8 +22,7 @@
         min-height: 20px;
         max-height: 40px;
         position: absolute;
-        top: 20px;
-        // right: 20px;    
+        top: 20px; 
         left: 35%;
         z-index: 999;
         cursor: pointer;

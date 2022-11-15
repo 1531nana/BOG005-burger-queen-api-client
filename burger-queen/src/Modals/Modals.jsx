@@ -1,9 +1,6 @@
 import { ModalPortal } from "./ModalPortal"
-import { useModal } from "./useModal"
 
-export const Modals = ({isOpen, open, close,element, content, elementClose}) =>{
-
-    // const [isOpenPortal, openModalPortal, closeModalPortal] = useModal(false);
+export const Modals = ({isOpen, open, close, element, content, elementClose}) =>{
 
     return(
         <div>
@@ -12,9 +9,7 @@ export const Modals = ({isOpen, open, close,element, content, elementClose}) =>{
             </div>
             <ModalPortal isOpen={isOpen} closeModal={close}>
                 {content}
-                    {/* <div onClick={close}> */}
                 {elementClose}
-                    {/* </div> */}
             </ModalPortal>
         </div>
     )

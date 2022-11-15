@@ -5,7 +5,12 @@ import Products from '../../assets/images/products.png'
 import Users from '../../assets/images/users.png'
 import Orders from '../../assets/images/orders.png'
 import { logOut } from "../../lib/helpers"
-import { Link, useNavigate } from "react-router-dom"
+import { Link} from "react-router-dom"
+import { LogoutModal } from "./LogoutModal/LogoutModal"
+import { Modals } from "../../Modals/Modals"
+import { useModal } from "../../Modals/useModal"
+import { BtnAbort } from "../Products/DeleteModalProduct/DeleteModalProduct"
+
 
 export const ExitIcon = ({close}) => {
     return(
@@ -15,12 +20,10 @@ export const ExitIcon = ({close}) => {
 
 export const SideMenu = () => {
 
-    const navigate = useNavigate()
+    const [isOpen, open, close] = useModal(false)
 
     return (
         <div className="sideMenu">
-
-            {/* <img src={Exit} alt="" className="sideMenu_exitMenu" /> */}
 
             <div className="sideMenu_userBox">
                 <img src={User} alt="user" className="sideMenu_userBox--img" />
@@ -46,9 +49,14 @@ export const SideMenu = () => {
                 </div>
 
             </div>
-
-            <span className="sideMenu_exit" onClick={logOut}>Cerrar Sesión</span>
-
+            <Modals 
+            isOpen={isOpen}
+            open={open}
+            close={close}
+            element={<span className="sideMenu_exit" >Cerrar Sesión</span>}
+            content={ <LogoutModal logout={logOut} />}
+            elementClose={< BtnAbort close={close} />}
+            />
         </div>
     )
 } 

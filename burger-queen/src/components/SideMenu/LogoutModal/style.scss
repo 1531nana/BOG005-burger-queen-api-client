@@ -1,0 +1,35 @@
+@import '../../../generics.scss';
+
+.logoutModal{
+
+    width: 300px;
+    height: 250px;
+    @include flex-column-center;
+    background-color: #ECECEC;
+    border-radius: 10px;
+
+    &_container{
+    @include flex-column-center;
+    gap: 10px;
+    padding: 5px;
+    }
+
+    &_title{
+        font-size: 28px;
+        display: flex;
+        position: absolute;
+        top: 10%;
+    }
+
+    &_question{
+        justify-content: center;
+        text-align: center;
+    }
+    
+    &_btnExit{
+        bottom: 10px;
+        left: 15px;
+        background: $tertiary-color;
+        @include btns-abort-delet;
+    }
+}

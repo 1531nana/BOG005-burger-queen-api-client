@@ -1,6 +1,6 @@
 @import '../../generics.scss';
 
-.products{
+.users{
     width: 100%;
     height: 100%;
     @include flex-column-center;
@@ -23,8 +23,6 @@
 
     &_container{
         width: 100%;
-        // min-width: 310px;
-        // max-width: 900px;
         background: #fff;
         border-radius: 10px;
         display: flex;

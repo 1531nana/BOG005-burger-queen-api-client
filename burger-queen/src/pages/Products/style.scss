@@ -7,24 +7,19 @@
     position: relative;
     // background: url('/src/assets/images/background1.jpg') no-repeat 50% 50%/cover;
     background: #202020;
-
     gap: 20px;
 
     &_page{
         width: 90%;
         min-width: 310px;
         max-width: 900px;
-        
         @include flex-column-center;
         gap: 20px;
-
         position: relative;
     }
 
     &_container{
         width: 100%;
-        // min-width: 310px;
-        // max-width: 900px;
         background: #fff;
         border-radius: 10px;
         display: flex;
@@ -32,7 +27,7 @@
         justify-content: center;
         align-items: center;
         padding-top: 20px;
-    } 
+    }
 
     &_button{
         width: 80%;
@@ -42,7 +37,8 @@
         padding: 15px 15px;
         @include flex-row-center;
         gap: 10px;
-        
+        cursor: pointer;
+
         &--text{
             font-weight: bold;
             text-align: center;
@@ -56,23 +52,23 @@
     &_role{
         font-weight: 500;
         font-size: 28px;
-        color: #fff;  
+        color: #fff;
     }
 }
 
-@media (min-width: 750px) {
+@media (min-width: 750px ) {
 
     .products{
         &_role{
             position: absolute;
             top: -10%;
             left: 5%;
-        }   
-        
+        }
+
         &_container{
             background: none;
             position: relative;
-        } 
+        }
 
         &_button{
             width: 20%;
@@ -80,22 +76,39 @@
             padding: 10px 15px;
             position: absolute;
             top: -15%;
-            right: 5%;           
+            right: 5%;
         }
-    
+
     }
 }
 
-// @media (min-width: 950px) {
 
-//     .products{
-//         &_role{
-//             left:95px;
-//         }   
-        
-//         &_button{
-//             right: 45px;           
-//         }
-    
-//     }
-// }
+@media (min-width: 1024px) {
+
+    .products{
+
+        align-items: flex-start;
+
+        &_container{
+            width: 80%;
+            max-height: 400px;
+        }
+
+        &_page{
+            width: 100%;
+            align-items: initial;
+        }
+
+        &_role{
+            top: -20%;
+            left: 40%;
+            text-align: center;
+            justify-content: center;
+        }
+
+        &_button{
+            display: none;
+        }
+
+    }
+}
