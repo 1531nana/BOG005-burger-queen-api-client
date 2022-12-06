@@ -1,0 +1,107 @@
+@import '../../generics.scss';
+
+.users{
+    width: 100%;
+    height: 100%;
+    @include flex-column-center;
+    position: relative;
+    // background: url('/src/assets/images/background1.jpg') no-repeat 50% 50%/cover;
+    background: #202020;
+
+    gap: 20px;
+
+    &_page{
+        width: 90%;
+        min-width: 310px;
+        max-width: 900px;
+        
+        @include flex-column-center;
+        gap: 20px;
+
+        position: relative;
+    }
+
+    &_container{
+        width: 100%;
+        background: #fff;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-top: 20px;
+    } 
+
+    &_button{
+        width: 80%;
+        min-width: 270px;
+        background: $secundary-color;
+        border-radius: 10px;
+        padding: 15px 15px;
+        @include flex-row-center;
+        gap: 10px;
+        
+        &--text{
+            font-weight: bold;
+            text-align: center;
+        }
+        &--plus{
+            width: 30px;
+            height: 30px;
+        }
+    }
+
+    &_role{
+        font-weight: 500;
+        font-size: 28px;
+        color: #fff;  
+    }
+}
+
+@media (min-width: 750px) {
+
+    .users{
+        &_role{
+            position: absolute;
+            top: -10%;
+            left: 5%;
+        }   
+        
+        &_container{
+            background: none;
+            position: relative;
+        } 
+
+        &_button{
+            width: 20%;
+            min-width: 200px;
+            padding: 10px 15px;
+            position: absolute;
+            top: -15%;
+            right: 5%;           
+        }
+    
+    }
+}
+
+@media (min-width: 1024px) {
+
+    .users{
+        &_container{
+            flex-direction: row-reverse;
+            gap: 20px;
+            padding-top: 0;
+        } 
+
+        &_role{
+            top: 0;
+            left: 0;
+            position: relative;
+        }   
+        
+        &_page{
+            max-width: 1000px;           
+        }
+    
+    }
+}

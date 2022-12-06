@@ -1,0 +1,118 @@
+@import '../../generics.scss';
+
+.table {
+    width: 100%;
+    min-width: 310px;
+    max-width: 850px;
+    min-height: 300px;
+    max-height: 400px;
+    padding: 20px;
+    background: rgb(255, 255, 255);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+
+    &_headerRow{
+       display: none;
+    }
+    &_body{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        overflow-y: scroll;
+    }
+
+    &_rowBody {
+        border-radius: 5px;
+        border: 1px solid #B8B5B5;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        min-height: 60px;
+        gap: 10px;
+        padding: 0 10px
+    }
+
+    &_rowBodyOpt{
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+    }
+
+    &_columnBody{
+        display: flex;
+        font-size: 14px;
+
+        &--img{
+            width: 10%;
+            min-width: 40px;
+            max-width: 50px;
+            height: 10%;
+            min-height: 40px;
+            max-height: 50px;
+        }
+        
+
+        &--price{
+            color: $tertiary-color;
+        }
+
+        &--option{
+            width: 20px;
+            height: 20px;
+        }
+        &--section{
+            width: 40%;
+            min-width: 140px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        &--pending{
+            color: red;
+        }
+        &--ready{
+            color: #FF8000 ;
+        }
+        &--delivered{
+            color: #269823;
+        }
+    }
+
+    &_img{
+        width: 100%;
+    }
+}
+
+@media (min-width: 750px) {
+
+    .table{
+        &_headerRow{
+            width: 100%;
+            height: 50px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            background: #F9B209;
+            border-radius: 10px;
+        }
+
+        &_columnBody{
+            &--section{
+                flex-direction: row;
+                gap: 20px;
+                align-items: center;
+                justify-content: space-between;
+            }
+        }
+      
+       
+    }
+}
+
+@media (min-width: 1024px) {
+    .table{
+        max-height: 460px;
+    }
+}

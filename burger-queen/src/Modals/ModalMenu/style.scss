@@ -1,0 +1,23 @@
+.modalMenu{
+    width: 100%;
+    min-height: 100vh;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .75);
+    display: none;
+    justify-content: left;
+
+    &.is-open{
+    display: flex;
+
+    }
+    &-contanier{
+        position: relative;
+        width: 70%;
+        min-height: 100vh;
+        padding: 1rem;
+    }
+
+}

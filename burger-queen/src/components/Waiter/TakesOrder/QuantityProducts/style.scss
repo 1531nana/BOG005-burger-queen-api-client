@@ -1,0 +1,26 @@
+@import '../../../../generics.scss';
+
+.editOrder{
+
+    @include flex-row-center;
+
+    &_img{
+        max-width: 110px;
+    }
+
+    &_length{
+
+        background: white;
+        border-radius: 60%;
+        width: 20px;
+        display: flex;
+        position: absolute;
+        bottom: 2px;
+        justify-content: center;
+        text-align: center;
+
+        &--quantity{
+            color: black;
+        }
+    }
+}

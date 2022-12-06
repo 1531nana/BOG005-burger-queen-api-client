@@ -1,0 +1,80 @@
+@import '../../generics.scss';
+
+.sideMenu{
+    width: 70%;
+    min-width: 300px;
+    min-height: 100vh;
+    @include flex-column-center;
+    justify-content: space-between;
+    padding: 50px 0;
+    max-width: 400px;
+    gap: 40px;
+    background: #efefef;
+    color: $primary-color;
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    transition: width 0.5s , opacity 0.3s;
+    opacity: 1;
+
+    &_exitMenu{
+        width: 20px;
+        max-width: 40px;
+        min-height: 20px;
+        max-height: 40px;
+        position: absolute;
+        top: 20px;
+        // right: 20px;    
+        left: 35%;
+        z-index: 999;
+        cursor: pointer;
+    }
+
+    &_userBox{
+        width: 80%;
+        @include flex-column-center;
+        gap: 10px;
+        padding-top: 50px;
+
+        &--img{
+            width: 40%;
+            max-width: 50px;
+        }
+        &--name{
+            color: $primary-color ;
+        }
+    }
+
+    &_menuBox{
+        width: 90%;
+        @include flex-column-center;
+        align-items: flex-start;
+        gap: 40px;
+        padding: 0 25px;
+
+        &--items{
+            width: 100%;
+            @include flex-row-center;
+            justify-content: flex-start;
+            gap: 20px;
+        }
+
+        &--img{
+            width: 10%;
+            max-width: 25px;
+        }
+
+        &--text{
+            color: #32343A;
+        }
+    }
+
+    &_exit{
+        margin-top: 60px;
+        color: $tertiary-color;
+        cursor: pointer;
+    }
+}
+
+

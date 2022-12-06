@@ -1,0 +1,57 @@
+@import '../../generics.scss';
+
+.header{
+    width: 100%;
+    height: 50px;
+    padding: 0 15px;
+
+    @include flex-row-center;
+    justify-content: space-between;
+
+    background: #1D1D1D;
+
+    border-bottom: 1px solid #C4C4C4;
+
+    position: absolute;
+    top: 0;
+
+    &_menu{
+        width: 100%;
+        max-width: 30px;
+        cursor: pointer;
+    }
+
+    &_logo{
+        width: 35%;
+        max-width: 110px;
+    }
+
+    &_user{
+
+        @include flex-row-center;
+
+        gap: 10px;
+
+        &--img{
+            width: 60%;
+            max-width: 30px;
+        }
+
+        &--name{
+            display: none;
+        }
+
+    }
+}
+
+@media (min-width: 750px) {
+
+    .header{
+        &_user{
+            &--name{
+                display: flex;
+                color: #fff;
+            }
+        }        
+    }
+}

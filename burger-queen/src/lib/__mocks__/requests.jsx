@@ -1,0 +1,1 @@
+export const makeRequestPost = jest.fn()

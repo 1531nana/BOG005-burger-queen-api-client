@@ -1,0 +1,14 @@
+@import '../../../generics.scss';
+
+.takesOrder{
+    width: 100%;
+    height: 100%;
+    @include flex-column-center;
+    position: relative;
+    background: #202020;
+
+    &_role{
+        margin-bottom: 50px;
+        color: #fff;  
+    }
+}

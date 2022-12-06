@@ -1,0 +1,64 @@
+@import '../../../generics.scss';
+
+.formOrder {
+    width: 90%;
+    min-width: 290px;
+    max-width: 350px;
+    min-height: 300px;
+    max-height: 500px;
+    border-radius: 10px;
+    @include flex-column-center;
+
+    &_text {
+        margin-bottom: 50px;
+        color: $secundary-color;
+    }
+
+    &_clientContainer {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 15px;
+
+        &--label {
+            color: $secundary-color;
+        }
+
+        &--input {
+            border: solid $secundary-color 1px;
+            border-radius: 8px;
+            height: 30px;
+            outline: none;
+            padding: 5px 10px;
+        }
+    }
+
+    &_btnContainer{
+        width: 100%;
+        @include flex-row-center;
+        gap: 20px;
+        margin-top: 30px;
+    }
+
+    &_btn {
+        width: 50%;
+        max-width: 130px;
+        height: 36px;
+        // padding: 10px 15px;
+        border: none;
+        border-radius: 8px;
+        text-align: center;
+        background: #6E259B;
+        margin: 0;
+        outline: none;
+        cursor: pointer;
+        font-weight: bold;
+        font-size: 14px;
+        color: #fff;
+
+        &--abort{
+            background: #4B4A4B;
+        }
+    }
+
+}

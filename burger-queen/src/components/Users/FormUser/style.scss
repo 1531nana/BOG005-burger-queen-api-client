@@ -1,0 +1,124 @@
+@import '../../../generics.scss';
+
+.formUser {
+    background: #fff;
+    width: 50%;
+    min-width: 290px;
+    max-width: 350px;
+    min-height: 300px;
+    max-height: 500px;
+    border-radius: 10px;
+
+    @include center-perfect;
+
+    &_form {
+        width: 90%;
+        min-width: 290px;
+        max-width: 340px;
+        @include flex-column-center;
+        gap: 20px;
+        padding: 1em;
+    }
+
+    &_title {
+        width: 80%;
+        min-width: 290px;
+        max-width: 315px;
+        background: $secundary-color;
+        border-radius: 10px;
+        padding: 15px 15px;
+        @include flex-row-center;
+        gap: 10px;
+        margin-top: 15px;
+
+        &--text {
+            font-size: 18px;
+            font-weight: bold;
+        }
+    }
+
+    &_options {
+        width: 100%;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+
+        &--input {
+            width: 100%;
+            max-width: 320px;
+            padding: 10px 15px;
+            margin-bottom: 15px;
+            border: 1px solid gray;
+            border-radius: 10px;
+            text-align: start;
+            outline: none;
+        }
+
+        select {
+            font-size: 15px;
+        }
+
+        &--image {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+
+            &--previewImage {
+                width: 315px;
+                height: 60px;
+                display: flex;
+
+                &--img {
+                    width: 20%;
+                    height: 80%;
+                    object-fit: contain;
+                }
+            }
+        }
+    }
+
+    &_containerFile{
+        @include flex-column-center;
+
+        &--input{
+            width: 80%;
+        }
+    }
+
+    &_containerBtns{
+        width: 90%;
+        @include flex-row-center;
+        gap: 20px;
+    }
+
+    &_btn {
+        width: 60%;
+        height: 36px;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 10px;
+        text-align: center;
+        background: $secundary-color;
+        margin: 0;
+        outline: none;
+        cursor: pointer;
+        font-weight: bold;
+        font-size: 14px;
+
+        &--abort{
+            background: rgb(170, 164, 164);
+        }
+    }
+}
+
+@media (min-width: 1024px) {
+    .formProduct {
+        &_form {
+            gap: 20px;
+        }
+
+        &_title {
+            margin-top: 0;
+        }
+    }
+}
