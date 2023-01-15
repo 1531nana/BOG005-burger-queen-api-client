@@ -124,10 +124,20 @@
 <a name='L59'></a><a href='#L59'>59</a>
 <a name='L60'></a><a href='#L60'>60</a>
 <a name='L61'></a><a href='#L61'>61</a>
-<a name='L62'></a><a href='#L62'>62</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L62'></a><a href='#L62'>62</a>
+<a name='L63'></a><a href='#L63'>63</a>
+<a name='L64'></a><a href='#L64'>64</a>
+<a name='L65'></a><a href='#L65'>65</a>
+<a name='L66'></a><a href='#L66'>66</a>
+<a name='L67'></a><a href='#L67'>67</a>
+<a name='L68'></a><a href='#L68'>68</a>
+<a name='L69'></a><a href='#L69'>69</a>
+<a name='L70'></a><a href='#L70'>70</a>
+<a name='L71'></a><a href='#L71'>71</a>
+<a name='L72'></a><a href='#L72'>72</a>
+<a name='L73'></a><a href='#L73'>73</a>
+<a name='L74'></a><a href='#L74'>74</a>
+<a name='L75'></a><a href='#L75'>75</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -185,6 +195,22 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./AppStyles.scss";
 import { ProtectedRoute } from "./components/ProtectedRoute/ProtectedRoute";
@@ -199,46 +225,59 @@ import { Users } from "./pages/Users/Users";
 import { ViewOrder } from "./pages/ViewOrder/ViewOrder";
 import { TakesOrder } from "./pages/Waiter/TakesOrder/TakesOrder";
 &nbsp;
-&nbsp;
-&nbsp;
 function <span class="fstat-no" title="function not covered" >App(</span>) {
-&nbsp;
 <span class="cstat-no" title="statement not covered" >  return (</span>
     &lt;div className="App"&gt;
       &lt;BrowserRouter&gt;
         &lt;Routes&gt;
           &lt;Route index element={&lt;Login /&gt;} /&gt;
           &lt;Route path="/login" element={&lt;Login /&gt;} /&gt;
-          &lt;Route path="/products/*" element={
-           &lt; ProtectedRoute avaliableRole={'admin'} redirect={'/takes-orders'}&gt;
-              &lt;ProductsProvider&gt;
-                &lt;Products /&gt;
-              &lt;/ProductsProvider&gt;
-          &lt;/ProtectedRoute&gt;
-          } /&gt;
-          &lt;Route path="/users/*" element={
-           &lt; ProtectedRoute avaliableRole={'admin'} redirect={'/takes-orders'}&gt;
-              &lt;UsersProvider&gt;
-                &lt;Users /&gt;
-              &lt;/UsersProvider&gt;
-          &lt;/ProtectedRoute&gt;
-          } /&gt;
-          &lt;Route exact path="/takes-orders" element={
-           //&lt; ProtectedRoute avaliableRole={'meser@'} redirect={'/products'}&gt;
-            &lt;WaiterProvider&gt;
-              &lt;OrderProvider&gt;
-                &lt;TakesOrder /&gt;
-              &lt;/OrderProvider&gt;
-            &lt;/WaiterProvider&gt;
-          //&lt;/ProtectedRoute&gt;
-          } /&gt;
-          &lt;Route path="/view-orders" element={
-&nbsp;
-            &lt;ViewOrderProvider&gt;
+          &lt;Route
+            path="/products/*"
+            element={
+              &lt;ProtectedRoute
+                avaliableRole={"admin"}
+                redirect={"/takes-orders"}
+              &gt;
+                &lt;ProductsProvider&gt;
+                  &lt;Products /&gt;
+                &lt;/ProductsProvider&gt;
+              &lt;/ProtectedRoute&gt;
+            }
+          /&gt;
+          &lt;Route
+            path="/users/*"
+            element={
+              &lt;ProtectedRoute
+                avaliableRole={"admin"}
+                redirect={"/login"}
+              &gt;
+                &lt;UsersProvider&gt;
+                  &lt;Users /&gt;
+                &lt;/UsersProvider&gt;
+              &lt;/ProtectedRoute&gt;
+            }
+          /&gt;
+            &lt;Route
+              path="/takes-orders"
+              element={
+                 &lt; ProtectedRoute avaliableRole={'Meser@'} redirect={'/login'}&gt;
+                &lt;WaiterProvider&gt;
+                  &lt;OrderProvider&gt;
+                    &lt;TakesOrder /&gt;
+                  &lt;/OrderProvider&gt;
+                &lt;/WaiterProvider&gt;
+                &lt;/ProtectedRoute&gt;
+              }
+            /&gt;
+          &lt;Route
+            path="/view-orders"
+            element={
+              &lt;ViewOrderProvider&gt;
                 &lt;ViewOrder /&gt;
-            &lt;/ViewOrderProvider&gt;
-&nbsp;
-          }/&gt;
+              &lt;/ViewOrderProvider&gt;
+            }
+          /&gt;
         &lt;/Routes&gt;
       &lt;/BrowserRouter&gt;
     &lt;/div&gt;
@@ -253,7 +292,7 @@ export default App;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2022-11-29T12:11:32.928Z
+                at 2023-01-13T20:52:28.577Z
             </div>
         <script src="../prettify.js"></script>
         <script>
