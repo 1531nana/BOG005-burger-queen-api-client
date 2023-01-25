@@ -45,7 +45,7 @@ export const OpenOrder = ({ element, Add, Delete }) => {
             </td>
             {
             dataUser.role !== 'Meser@' ? '' : 
-            <td className='table_columnBody'>
+            <td className='table_columnBody' >
                 <Modals
                     isOpen={isOpenDelete}
                     open={openDelete}

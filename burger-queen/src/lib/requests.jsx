@@ -55,6 +55,7 @@ async function makeRequestGet(pathname) {
     },
   });
 
+  console.log('response ',response);
   const responseData = await response.json()
   console.log('obtener órdenes ',responseData);
   return responseData
@@ -88,6 +89,8 @@ const makeRequestPatch = async (pathname, id, data) => {
     },
     body: JSON.stringify(data),
   });
+  res.json().then(resul => console.log(resul))
+  // console.log('editar función ',res.json());
 }
 
 const makeRequestDeleteOrder = async ( id) => {
@@ -102,6 +105,9 @@ const makeRequestDeleteOrder = async ( id) => {
       'authorization': `Bearer ${token}`
     },
   });
+
+  console.log('res>>>>', res);
+  return res
 
 }
 

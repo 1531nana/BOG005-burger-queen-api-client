@@ -15,7 +15,6 @@ export const BodyTableOrder = () => {
                 return (
                     <tr key={element.product.id} className='bodyTabletOrder_rowBody'>
             
-                        {/* cantidad */}
                         <td className='bodyTabletOrder_quantity'>{    
                           < BoxQuantity 
                           element={element.qty}

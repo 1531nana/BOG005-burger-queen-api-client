@@ -10,6 +10,7 @@ const WaiterProvider = ({children}) => {
 
     async function getListProducts() {
         const dataProducts = await getProducts('products')
+        
         setProducts(dataProducts);
     }
 

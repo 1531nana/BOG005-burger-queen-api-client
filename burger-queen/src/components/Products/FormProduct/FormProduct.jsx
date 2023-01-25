@@ -44,6 +44,7 @@ export const FormProduct = ({ element, closeModal }) => {
 
     const getProductById = async (id) => {
         const data = await makeRequestGet(`products/${id}`)
+        console.log('form products ',data);
         setProductId(id)
         setNameProduct(data.name)
         setTypeProduct(data.type)
@@ -107,11 +108,11 @@ export const FormProduct = ({ element, closeModal }) => {
 
                     <label htmlFor="name_product">Nombre del producto</label>
                     <input onChange={(event) => handleInputsChange(setNameProduct, event)} type="text" name="name_product"
-                        className="formProduct_options--input" value={nameProduct} required />
+                        className="formProduct_options--input" value={nameProduct} aria-label='name_product' required />
 
                     <label htmlFor="select_product">Tipo de menú:</label>
                     <select onChange={(event) => handleInputsChange(setTypeProduct,event)} name="select_product"
-                        className="formProduct_options--input" value={typeProduct} required>
+                        className="formProduct_options--input" value={typeProduct} aria-label='select_product' required>
                         <option selected='selected' >Seleccionar</option>
                         <option >Desayuno</option>
                         <option >Almuerzo</option>
@@ -127,7 +128,8 @@ export const FormProduct = ({ element, closeModal }) => {
                                 <input
                                     onChange={(e) => {
                                         handleChangeImage(e)
-                                    }} type="file" name="imageProduct" className="formProduct_containerFile--input" />
+                                    }} type="file" name="imageProduct" className="formProduct_containerFile--input"
+                                     aria-label='imageProduct' data-testid='imageProduct' />
                             </label>
 
                             <img src={filePreview} alt="" className="formProduct_options--image--previewImage--img" />
@@ -138,7 +140,8 @@ export const FormProduct = ({ element, closeModal }) => {
                     
                     <label htmlFor="name_product">Precio del producto</label>
                     <input onChange={(e) => handleInputsChange(setPriceProduct,e)} type="number" name="price_product"
-                        className="formProduct_options--input" value={priceProduct} required />
+                        className="formProduct_options--input" value={priceProduct} 
+                        aria-label='name_product' required />
 
                 </div>
             <div className="formProduct_containerBtns">

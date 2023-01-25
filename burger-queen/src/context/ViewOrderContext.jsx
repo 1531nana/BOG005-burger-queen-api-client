@@ -43,7 +43,7 @@ const ViewOrderProvider = ({ children }) => {
             key: null, componente: Status
         },
         { key: null, componente: (element) =>
-            <OpenOrder type="view-orders" element={element}
+            <OpenOrder type="orders" element={element}
              Add={ModalViewOrder} Delete={DeleteModalOrder} /> }
     ]
 
@@ -51,13 +51,13 @@ const ViewOrderProvider = ({ children }) => {
     async function getOrders() {
         const data = await makeRequestGet("orders")
         setViewOrder(data);
-        console.log(data)
     }
 
-    //eliminar
+    //eliminar orden
     async function deleteOrder(id){
         await makeRequestDeleteOrder(id)
-        await getOrders()
+        setViewOrder(viewOrder.filter(order => order.id != id))
+        // getOrders()
     }
 
     const changeStatusDelivered = async (id, data) => {

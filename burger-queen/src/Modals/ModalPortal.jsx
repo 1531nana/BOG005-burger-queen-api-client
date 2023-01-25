@@ -5,7 +5,9 @@ import abort from '../assets/images/closeModal.png'
 
 export const ModalPortal = ({children, isOpen, closeModal}) => {
 
-    const handleModalContainerClick = (e) => e.stopPropagation();
+    const handleModalContainerClick = (e) =>{ e.stopPropagation()
+    console.log('e modal ',e);
+    };
 
     return ReactDOM.createPortal(
         <article className={`modal ${isOpen && 'is-open'} `} onClick={closeModal}>

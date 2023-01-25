@@ -35,7 +35,8 @@ describe("LoginForm component ", () => {
     });
 
     const inputEmail = screen.getByTestId("login-email-input");
-    fireEvent.change(inputEmail, { target: { value: data.email } });
+    fireEvent.change(inputEmail, { target: { value: "user@fake.co" } });
+    screen.debug()
 
     const inputPassword = screen.getByTestId("login-password-input");
     fireEvent.change(inputPassword, { target: { value: data.password } });

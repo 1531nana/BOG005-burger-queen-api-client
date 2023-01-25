@@ -63,7 +63,8 @@ const UsersProvider = ({ children }) => {
     }
 
     //eliminar
-    async function deleteUser(id){
+    async function deleteUser(id, e){
+        console.log('delte e context ',e.target.dataset.id);
         await makeRequestDelete("users", id)
         await getUsers()
     }
